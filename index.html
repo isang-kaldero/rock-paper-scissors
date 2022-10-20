@@ -1,11 +1,59 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <meta charset="utf-8">
         <title>Rock, Paper, Scissors</title>
-        <script src="assets/script.js"></script>
+        <script src="assets/script.js" defer></script>
+        <link href="assets/style.css" rel="stylesheet" />
     </head>
+
     <body>
-       No UI yet, everything is in console.
+        <div class="container">
+
+            <div class="intro">
+                <p>Your sworn enemy challenged you to a duel. </p>
+                <p>A duel to death for the leftover pizza.</p>
+                <p>You're not going to give up that last cold slice, are we?</p>
+            </div>
+
+            <div class="players">
+
+                <div class="player you">
+                    <div class="info">
+                        <img src="assets/images/you-cat.jpg" />
+                        <img src="assets/images/rock.png"  class="player-card" />
+                    </div>
+
+                    <div class="player-hp-wrapper">                        
+                        <div class="hp"></div>
+                    </div>
+
+                </div>
+
+                <div class="player enemy">
+                    <div class="info">
+                        <img src="assets/images/rock.png" class="player-card"/>
+                        <img src="assets/images/grumpy-cat.jpg" />
+                    </div>                    
+
+                    <div class="player-hp-wrapper">                        
+                        <div class="hp"></div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="round-stat">
+                <h1>You won!</h1>
+                <p>You give your sworn enemy a roundhouse kick!</p>
+            </div>
+
+            <div class="cards">                
+                <img src="assets/images/rock.png" />
+                <img src="assets/images/paper.png" />
+                <img src="assets/images/scissors.png" />
+            </div>
+        </div>
     </body>
+
 </html>
