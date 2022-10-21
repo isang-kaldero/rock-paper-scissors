@@ -6,11 +6,13 @@ CHOICE_STANDING["rock"] = ["rock", "scissors", "paper"];
 CHOICE_STANDING["paper"] = ["paper", "rock", "scissors"];
 CHOICE_STANDING["scissors"] = ["scissors", "paper", "rock"];
 
+//co
+
 function getComputerChoice(){
 
     //computer loves RNG, so let's get a random number
-    let random_number = Math.floor(Math.random() * 3);
-    let computer_choice = CHOICES[random_number];
+    let random_number = Math.floor(Math.random() * 3); //returns 0-2
+    let computer_choice = CHOICES[random_number]; //returns the card name via random_number as index
 
     return computer_choice;
 }
@@ -31,18 +33,19 @@ function playRound(player_card, computer_card) {
         outcome = -1;
     }
     
-
     return outcome;
 
 }
 
 function game() {
 
-    const LIMIT = 5;
-    let player_score = 0;
-    let computer_score = 0;
+    const DEAD = 0;
+    let player_hp = 100;
+    let computer_hp = 100;
 
-    for (let ctr = 0; ctr < LIMIT; ctr++) {
+
+
+    /*for (let ctr = 0; ctr < BESTOF; ctr++) {
 
         let player_card = prompt("Gimme your best shot. Enter rock, paper or scissors.");
         let computer_card = getComputerChoice();
@@ -72,7 +75,7 @@ function game() {
         }        
         console.log(result_txt);
         console.log(`you:${player_score}   computer:${computer_score}`);
-    }
+    }*/
 
 }
 
