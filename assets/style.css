@@ -26,18 +26,21 @@
 }
 
 @keyframes show_el {
+    from { opacity: 0;}
+    to { opacity: 100; }
+}
+
+@keyframes show_el2 {
     from { visibility: hidden;}
-    to { visibility: visible;}
+    to { visibility: visible; }
+}
+
+@keyframes blink {
+    from { background-color: #0a0a0a;}
+    to { background-color: #ffc107; }
 }
 
 /** animation elements **/
-/*.intro {
-    animation-name: hide_el;
-    animation-duration: 1s;
-    animation-delay: 8s;
-    animation-fill-mode: forwards;
-}
-
 .intro h1 {
     animation-name: h1_inout;
     animation-duration: 2s;
@@ -61,16 +64,28 @@ p.two img {
     animation-delay: 2.2s;
 }
 
-.table {
-    visibility: hidden;
-    animation-name: show_el;
-    animation-delay: 9s;
-    animation-duration: 1s;
-    animation-fill-mode: forwards;
+/*.intro {
+    display: none;
 }*/
 
-.intro {
-    display: none;
+.table {
+    opacity: 0;
+    animation-name: show_el;
+    animation-delay: 8s;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    z-index: 10;
+}
+
+.active {
+    visibility: hidden;
+    animation-name: show_el2;
+    animation-duration: 300ms;
+}
+
+.player-card.active {
+    animation-name: blink;
+    animation-duration: 800ms;
 }
 
 * {
@@ -130,9 +145,11 @@ body {
     display: flex;
     align-items: center;
     gap: 10px;
+    position: relative;
 }
 
-.player img {
+.player img.avatar,
+img.player-card {
     object-fit: none;
     border-radius: 50%;
     width: 180px;
@@ -149,8 +166,18 @@ img.player-card {
     height: 70px;
     padding: 8px;
     background-color: #ffc107;
+    visibility: hidden;
 }
 
+.scratch {
+    position: absolute;
+    width: 200px;    
+    visibility: hidden;
+}
+
+.enemy .scratch {
+    right: 0;
+}
 
 .player-hp-wrapper {    
     height: 15px;
@@ -160,16 +187,12 @@ img.player-card {
 }
 
 .player-hp-wrapper .hp {
-    width: 50%;
+    width: 100%;
     background-color: green;
     position: absolute;
     top: 0;
     bottom:0;
     left: 0;
-}
-
-.enemy .hp {
-    width: 80%;
 }
 
 .cards {
@@ -190,4 +213,12 @@ img.player-card {
     padding: 50px;
     border-radius: 20px;
     cursor: pointer;
+}
+
+#restart-game {
+    margin-top: 20px;
+    font-size: 1em;
+    padding: 10px;
+    cursor: pointer;
+    visibility: hidden;
 }
